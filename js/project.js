@@ -1,7 +1,7 @@
 //Project class where todo-items go
 
 class Project {
-    #taskList = []
+    #taskList = [];
 
     constructor(name) {
         this.name = name;
@@ -11,7 +11,16 @@ class Project {
         this.#taskList.push(task);
     }
 
-    removeTask(index) {
-        this.#taskList.splice(index, 1);
+    removeTask(task) {
+        const index = this.#taskList.indexOf(task);
+
+        if (index !== -1) {this.#taskList.splice(index, 1)}
+        
+    }
+
+    getTasks() {
+        return this.#taskList;
     }
 }
+
+export { Project };
