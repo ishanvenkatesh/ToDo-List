@@ -18,3 +18,5 @@ class Task {
         else {this.isComplete=true}
     }
 }
+
+export { Task };
