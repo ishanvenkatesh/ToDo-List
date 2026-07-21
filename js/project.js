@@ -21,6 +21,10 @@ class Project {
     getTasks() {
         return this.#taskList;
     }
+
+    getName() {
+        return this.name;
+    }
 }
 
 export { Project };
