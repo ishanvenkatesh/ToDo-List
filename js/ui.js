@@ -2,22 +2,28 @@
 
 const projectList = document.querySelector("#project-list");
 
-function renderProject(project) {
+function renderProject(project, onDelete) {
     const projectItem = document.createElement("li");
     projectItem.textContent = project.getName();
     projectList.appendChild(projectItem);
 
-    const deleteProjectBtn = document.createElement("button");
-    deleteProjectBtn.textContent = "X";
-    projectItem.appendChild(deleteProjectBtn);
+    if (project.name !== "My Tasks") {
+        const deleteProjectBtn = document.createElement("button");
+        deleteProjectBtn.textContent = "X";
+        projectItem.appendChild(deleteProjectBtn);
+
+        deleteProjectBtn.addEventListener("click", (event) => {
+            onDelete(project);
+        });
+    }
 }
 
-function renderProjects(projects) {
+function renderProjects(projects, onDelete) {
     
     projectList.replaceChildren();
 
     for (const project of projects) {
-        renderProject(project)
+        renderProject(project, onDelete)
         
     }
     
