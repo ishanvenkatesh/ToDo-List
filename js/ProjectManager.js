@@ -1,3 +1,5 @@
+import {Project} from "./Project.js";
+
 class ProjectManager {
     #projectList = [];
     #currentProject = null;
