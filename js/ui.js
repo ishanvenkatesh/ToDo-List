@@ -12,4 +12,5 @@ function showTaskDetails(task) {
 
 }
 
-export {renderProjects, renderTasks, showTaskDetails}
+export { renderProjects, renderTasks, showTaskDetails }
+
