@@ -5,6 +5,7 @@ import { renderProjects, renderTasks, showTaskDetails } from "./ui.js";
 
 const projectManager = new ProjectManager();
 projectManager.addProject(new Project("Default"));
+renderProjects(projectManager.getProjects());
 
 const addProjectBtn = document.querySelector("#add-project-btn");
 const addTaskBtn = document.querySelector("#add-task-btn");
@@ -12,8 +13,6 @@ const addTaskBtn = document.querySelector("#add-task-btn");
 const projectForm = document.querySelector("#project-form");
 const projectName = document.querySelector("#project-name");
 
-addProjectBtn.addEventListener("click", (event) => {
-});
 
 projectForm.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -26,5 +25,8 @@ projectForm.addEventListener("submit", (event) => {
 });
 
 addProjectBtn.addEventListener("click", (event) => {
+    projectForm.reset();
     projectForm.hidden = false;
+    projectName.focus();
 });
+
