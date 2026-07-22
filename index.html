@@ -21,13 +21,20 @@
     </aside>
 
     <main id="task-panel">
-        <h2 id="current-project">Default</h2>
+        <h2 id="current-project">My Tasks</h2>
         
         <ul id="task-list"></ul>
         
         <button id="add-task-btn">New Task</button>
+
+        <form id="task-form" hidden>
+            <input id="task-name" type="text" placeholder="Task Name">
+            <input id="task-description" type="text" placeholder="Task Description">
+            <input id="task-dueDate" type="text" placeholder="m/d/y">
+            <input id="task-priority" type="text" placeholder="priority">
+        </form>
         
-        <script type="module" src="js/main.js"></script>
     </main>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
