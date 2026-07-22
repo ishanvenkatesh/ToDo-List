@@ -2,10 +2,17 @@
 
 const projectList = document.querySelector("#project-list");
 
-function renderProject(project, onDelete) {
+function renderProject(project, onDelete, onSelect) {
     const projectItem = document.createElement("li");
-    projectItem.textContent = project.getName();
     projectList.appendChild(projectItem);
+
+    const projectSelect = document.createElement("button");
+    projectSelect.textContent = project.getName();
+    projectItem.appendChild(projectSelect);
+
+    projectSelect.addEventListener("click", (event) => {
+        onSelect(project);
+    });
 
     if (project.name !== "My Tasks") {
         const deleteProjectBtn = document.createElement("button");
@@ -18,12 +25,12 @@ function renderProject(project, onDelete) {
     }
 }
 
-function renderProjects(projects, onDelete) {
+function renderProjects(projects, onDelete, onSelect) {
     
     projectList.replaceChildren();
 
     for (const project of projects) {
-        renderProject(project, onDelete)
+        renderProject(project, onDelete, onSelect)
         
     }
     

@@ -13,9 +13,16 @@ const addTaskBtn = document.querySelector("#add-task-btn");
 const projectForm = document.querySelector("#project-form");
 const projectName = document.querySelector("#project-name");
 
+const currentProject = document.querySelector("#current-project");
+
 function handleDelete(project) {
     projectManager.removeProject(project);
-    renderProjects(projectManager.getProjects(), handleDelete);
+    renderProjects(projectManager.getProjects(), handleDelete, handleSelect);
+}
+
+function handleSelect(project) {
+    projectManager.setSelected(project);
+    currentProject.textContent = projectManager.getSelected().getName();
 }
 
 projectForm.addEventListener("submit", (event) => {
@@ -25,7 +32,7 @@ projectForm.addEventListener("submit", (event) => {
     projectManager.addProject(new Project(name));
     projectForm.reset();
     projectForm.hidden = true;
-    renderProjects(projectManager.getProjects(), handleDelete);
+    renderProjects(projectManager.getProjects(), handleDelete, handleSelect);
 });
 
 addProjectBtn.addEventListener("click", (event) => {

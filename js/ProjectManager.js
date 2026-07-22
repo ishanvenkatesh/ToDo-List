@@ -14,6 +14,14 @@ class ProjectManager {
     getProjects() {
         return this.#projectList;
     }
+
+    setSelected(project) {
+        this.#currentProject = project;
+    }
+
+    getSelected() {
+        return this.#currentProject;
+    }
 }
 
 export { ProjectManager };
