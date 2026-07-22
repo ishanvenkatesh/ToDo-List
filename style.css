@@ -2,3 +2,9 @@ body {
     display: flex;
     gap: 30px;
 }
+
+#project-list {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
