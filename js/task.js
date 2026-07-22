@@ -17,6 +17,22 @@ class Task {
         if (this.isComplete) {this.isComplete=false}
         else {this.isComplete=true}
     }
+
+    getTitle() {
+        return this.title;
+    }
+
+    getDescription() {
+        return this.description;
+    }
+
+    getDueDate() {
+        return this.dueDate;
+    }
+
+    getPriority() {
+        return this.priority;
+    }
 }
 
 export { Task };
